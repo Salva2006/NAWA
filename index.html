@@ -66,14 +66,29 @@ const grid = document.getElementById('productGrid');
 productos.forEach((p,i)=>{
   const card = document.createElement('div');
   card.className = 'card';
+  // FIX FILA: si no encuentra .jpeg, intenta con .jpg y con minusculas
   card.innerHTML = `
-    <img src="${p.img}" alt="${p.name}" loading="lazy">
+    <img src="${encodeURI(p.img)}" alt="${p.name}" loading="lazy" onerror="handleImgError(this)">
     <h3>${p.name}</h3>
     <p>S/ ${p.price}</p>
     <button onclick="addCart(${i})">Agregar</button>
   `;
   grid.appendChild(card);
 });
+
+function handleImgError(img){
+  if(img.dataset.retried) return;
+  img.dataset.retried = "1";
+  // intenta con .jpg si era .jpeg
+  if(img.src.includes('.jpeg')){
+    img.src = img.src.replace('.jpeg','.jpg');
+  } else if(img.src.includes('.JPEG')){
+    img.src = img.src.replace('.JPEG','.JPG');
+  } else {
+    // intenta minuscula
+    img.src = img.src.toLowerCase();
+  }
+}
 
 function addCart(i){
   const prod = productos[i];
