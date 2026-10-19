@@ -1,74 +1,100 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>NAWA - Catálogo de Medias</title>
-    <link rel="stylesheet" href="style.css">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>NAWA - Medias Kawaii Premium</title>
+<link rel="stylesheet" href="style.css">
+<link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;600&display=swap" rel="stylesheet">
 </head>
 <body>
-    <header class="header-nawa">
-        <div class="logo-nawa">
-            <img src="./logo-nawa.png" alt="NAWA">
-        </div>
-        <nav class="nav-nawa">
-            <a href="#inicio">INICIO</a>
-            <a href="#medias">MEDIAS</a>
-            <a href="resenas.html">RESEÑAS</a>
-            <span class="iconos">
-                <a href="javascript:void(0)" class="icono cart" onclick="abrirCarrito()">🛒 <span class="cart-count" id="cartCount">0</span></a>
-            </span>
-        </nav>
-    </header>
 
-    <section class="hero" id="inicio">
-        <h1>NAWA</h1>
-        <p>Medias de Calidad Premium - Suaves y Duraderas</p>
-        <div class="botones-whatsapp">
-            <a href="https://wa.me/51967414343" class="btn-whatsapp" target="_blank">WHATSAPP | LÍNEA 1</a>
-            <a href="https://wa.me/51974541722" class="btn-whatsapp socio" target="_blank">WHATSAPP | LÍNEA 2</a>
-        </div>
-    </section>
+<header>
+    <div class="logo">NAWA 💖</div>
+    <nav>
+        <a href="#inicio">Inicio</a>
+        <a href="#catalogo">Catálogo</a>
+        <a href="#" onclick="verCarrito()">Carrito (<span id="cartCount">0</span>)</a>
+    </nav>
+</header>
 
-    <section class="productos" id="medias">
-        <h2>CATÁLOGO DE MEDIAS</h2>
-        <p style="text-align:center; color:#aaa; margin-bottom:20px; font-size:13px;">Calidad Premium | Suaves y Duraderas</p>
-        <div class="grid">
-            <div class="card"><img src="./Alo beige.jpeg"><h3>Alo Beige</h3><div class="precio">S/ 17</div><button class="btn-comprar" onclick="addToCart('Media Alo Beige', 17, './Alo beige.jpeg')">Agregar al carrito</button></div>
-            <div class="card"><img src="./Alo Black.jpeg"><h3>Alo Black</h3><div class="precio">S/ 17</div><button class="btn-comprar" onclick="addToCart('Media Alo Black', 17, './Alo Black.jpeg')">Agregar al carrito</button></div>
-            <div class="card"><img src="./Alo White.jpeg"><h3>Alo White</h3><div class="precio">S/ 17</div><button class="btn-comprar" onclick="addToCart('Media Alo White', 17, './Alo White.jpeg')">Agregar al carrito</button></div>
-            <div class="card"><img src="./Vansk black.jpeg"><h3>Vans Black</h3><div class="precio">S/ 17</div><button class="btn-comprar" onclick="addToCart('Media Vans Black', 17, './Vansk black.jpeg')">Agregar al carrito</button></div>
-            <div class="card"><img src="./vans snoopy.jpeg"><h3>Vans Snoopy</h3><div class="precio">S/ 17</div><button class="btn-comprar" onclick="addToCart('Media Vans Snoopy', 17, './vans snoopy.jpeg')">Agregar al carrito</button></div>
-            <div class="card"><img src="./FILA.jpeg"><h3>Fila</h3><div class="precio">S/ 17</div><button class="btn-comprar" onclick="addToCart('Media Fila', 17, './FILA.jpeg')">Agregar al carrito</button></div>
-            <div class="card"><img src="./NB white.jpeg"><h3>NB White</h3><div class="precio">S/ 17</div><button class="btn-comprar" onclick="addToCart('Media NB White', 17, './NB white.jpeg')">Agregar al carrito</button></div>
-            <div class="card"><img src="./Under Armour.jpeg"><h3>Under Armour</h3><div class="precio">S/ 17</div><button class="btn-comprar" onclick="addToCart('Media Under Armour', 17, './Under Armour.jpeg')">Agregar al carrito</button></div>
-            <div class="card"><img src="./Argentina.jpeg"><h3>Argentina</h3><div class="precio">S/ 17</div><button class="btn-comprar" onclick="addToCart('Media Argentina', 17, './Argentina.jpeg')">Agregar al carrito</button></div>
-            <div class="card"><img src="./Kitty Gym.jpeg"><h3>Kitty Gym</h3><div class="precio">S/ 17</div><button class="btn-comprar" onclick="addToCart('Media Kitty Gym', 17, './Kitty Gym.jpeg')">Agregar al carrito</button></div>
-            <div class="card"><img src="./nickelodeon.jpeg"><h3>Nickelodeon</h3><div class="precio">S/ 17</div><button class="btn-comprar" onclick="addToCart('Media Nickelodeon', 17, './nickelodeon.jpeg')">Agregar al carrito</button></div>
-            <div class="card"><img src="./Lucifer Cat.jpeg"><h3>Lucifer Cat</h3><div class="precio">S/ 17</div><button class="btn-comprar" onclick="addToCart('Media Lucifer Cat', 17, './Lucifer Cat.jpeg')">Agregar al carrito</button></div>
-        </div>
-    </section>
-
-    <div id="cartDrawer" class="cart-drawer">
-        <div class="cart-header"><h3>Tu Carrito ( <span id="cartCount2">0</span> )</h3><span class="cerrar-cart" onclick="cerrarCarrito()">✕</span></div>
-        <div id="cartItems" class="cart-items"></div>
-        <div class="cart-footer"><div class="cart-total">Total: S/ <span id="cartTotal">0</span></div><button class="btn-pagar" onclick="pagarWhatsapp()">Pedir por WhatsApp</button><button class="btn-vaciar" onclick="vaciarCarrito()">Vaciar carrito</button></div>
+<section class="hero" id="inicio">
+    <h1>NAWA</h1>
+    <p>Medias de Calidad Premium - Suaves, Kawaii y Duraderas ✨</p>
+    <div class="botones-whatsapp">
+        <a href="https://wa.me/51967414343" class="btn-whatsapp" target="_blank">COMPRAR POR WHATSAPP 💖</a>
     </div>
-    <div id="overlay" class="overlay" onclick="cerrarCarrito()"></div>
-    <footer id="contacto">© 2026 NAWA - Lima</footer>
+</section>
+
+<section id="catalogo" class="catalogo">
+    <h2>Nuestro Catálogo 🧦</h2>
+    <div class="grid" id="productGrid"></div>
+</section>
+
+<!-- CARRITO -->
+<div id="carritoModal" class="modal">
+    <div class="modal-content">
+        <span onclick="cerrarCarrito()" class="close">&times;</span>
+        <h2>Tu Carrito 🛒</h2>
+        <div id="cartItems"></div>
+        <h3>Total: S/ <span id="cartTotal">0</span></h3>
+        <button class="btn-whatsapp" onclick="pagarWhatsapp()">Pedir por WhatsApp</button>
+    </div>
+</div>
+
 <script>
-let cart = JSON.parse(localStorage.getItem('nawa_cart') || '[]');
-function saveCart(){ localStorage.setItem('nawa_cart', JSON.stringify(cart)); updateCount(); }
-function updateCount(){let totalQty = cart.reduce((s,i)=>s+i.qty,0);document.getElementById('cartCount').textContent = totalQty;document.getElementById('cartCount2').textContent = totalQty;let total = cart.reduce((s,i)=>s+i.price*i.qty,0);document.getElementById('cartTotal').textContent = total;}
-function addToCart(name, price, img){let f = cart.find(p=>p.name===name);if(f){ f.qty++; } else { cart.push({name, price, img, qty:1}); }saveCart(); renderCart(); abrirCarrito();}
-function renderCart(){let div = document.getElementById('cartItems');if(cart.length===0){ div.innerHTML='<p style="text-align:center;padding:30px;color:#888">Tu carrito está vacío</p>'; return; }div.innerHTML = cart.map((p,i)=>`<div class="cart-item"><img src="${p.img}"><div class="cart-info"><b>${p.name}</b><span>S/ ${p.price} | Subtotal S/ ${p.price*p.qty}</span></div><div class="cart-acciones"><button onclick="cambiarQty(${i},-1)">-</button><span>${p.qty}</span><button onclick="cambiarQty(${i},1)">+</button><button class="del" onclick="eliminar(${i})">🗑️</button></div></div>`).join('');}
-function cambiarQty(i,d){ cart[i].qty+=d; if(cart[i].qty<=0) cart.splice(i,1); saveCart(); renderCart(); }
-function eliminar(i){ cart.splice(i,1); saveCart(); renderCart(); }
-function vaciarCarrito(){ cart=[]; saveCart(); renderCart(); }
-function abrirCarrito(){ document.getElementById('cartDrawer').classList.add('open'); document.getElementById('overlay').classList.add('show'); renderCart(); }
-function cerrarCarrito(){ document.getElementById('cartDrawer').classList.remove('open'); document.getElementById('overlay').classList.remove('show'); }
-function pagarWhatsapp(){if(cart.length===0){ alert('Carrito vacío'); return; }let msg = 'Hola NAWA! Quiero pedir:%0A';cart.forEach(p=>{ msg+=`%0A- ${p.name} x${p.qty} = S/ ${p.price*p.qty}`; });msg+=`%0A%0ATOTAL: S/ ${document.getElementById('cartTotal').textContent}`;window.open('https://wa.me/51967414343?text='+msg, '_blank');}
-updateCount(); renderCart();
+const productos = [
+    {id:1, name:"Alo Black", price:15, img:"Alo Black.jpeg"},
+    {id:2, name:"Alo White", price:15, img:"Alo White.jpeg"},
+    {id:3, name:"Alo Beige", price:15, img:"Alo beige.jpeg"},
+    {id:4, name:"Argyle", price:15, img:"argyle.jpeg"},
+    {id:5, name:"FIL A", price:15, img:"FIL A.jpeg"},
+    {id:6, name:"Kitty", price:15, img:"kitty.jpeg"},
+    {id:7, name:"Nickelodeon", price:18, img:"nickelodeon.jpeg"},
+    {id:8, name:"Vans Snoopy", price:18, img:"vans snoopy.jpeg"}
+];
+
+let cart = [];
+const grid = document.getElementById('productGrid');
+productos.forEach(p=>{
+    grid.innerHTML+=`
+    <div class="card">
+        <img src="${p.img}" alt="${p.name}">
+        <h3>${p.name}</h3>
+        <p>S/ ${p.price}</p>
+        <button onclick="addCart(${p.id})">Agregar</button>
+    </div>`;
+});
+
+function addCart(id){
+    const prod = productos.find(x=>x.id===id);
+    const found = cart.find(x=>x.id===id);
+    if(found) found.qty++;
+    else cart.push({...prod, qty:1});
+    actualizarCarrito();
+}
+function actualizarCarrito(){
+    document.getElementById('cartCount').textContent = cart.reduce((a,b)=>a+b.qty,0);
+    const cont = document.getElementById('cartItems');
+    cont.innerHTML='';
+    let total=0;
+    cart.forEach(p=>{
+        total+=p.price*p.qty;
+        cont.innerHTML+=`<p>${p.name} x${p.qty} - S/ ${p.price*p.qty}</p>`;
+    });
+    document.getElementById('cartTotal').textContent=total;
+}
+function verCarrito(){document.getElementById('carritoModal').style.display='block';}
+function cerrarCarrito(){document.getElementById('carritoModal').style.display='none';}
+
+function pagarWhatsapp(){
+    if(cart.length===0){ alert('Carrito vacío'); return; }
+    let msg = 'Hola NAWA! 💖 Quiero pedir:%0A';
+    cart.forEach(p=>{ msg+=`%0A- ${p.name} x${p.qty} = S/ ${p.price*p.qty}`; });
+    msg+=`%0A%0ATOTAL: S/ ${document.getElementById('cartTotal').textContent}`;
+    // SOLO TU NUMERO
+    window.open('https://wa.me/51967414343?text='+msg, '_blank');
+}
 </script>
 </body>
 </html>
